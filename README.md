@@ -687,10 +687,6 @@ git remote -v
 ```
 
 ```
-git remote -v
-```
-
-```
 origin	git@github.com:bs7703/repo.git (fetch)
 origin	git@github.com:bs7703/repo.git (push)
 ```
