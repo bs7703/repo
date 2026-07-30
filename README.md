@@ -1,9 +1,12 @@
 프로젝트 개요
 0. 실행환경
 OS	UBUNTU 22.04 && MACOS SEQUOIA 15.7.4
+
 SHELL	BASH && ZSH
+
 DOCKER	29.4.0
-GIT	
+
+GIT	2.53.0	
 
 1. 기술문서작성
 
@@ -652,8 +655,46 @@ root@8974dccb686f:/data# exit
 ```
 exit
 ```
+5.git설정 및 github연동
 
-5. 트러블슈팅과 문제해결
+git config파일확인
+
+```
+git config --list
+```
+
+```
+credential.helper=osxkeychain
+user.name=**
+user.email=**@gmail.com
+core.repositoryformatversion=0
+core.filemode=true
+core.bare=false
+core.logallrefupdates=true
+core.ignorecase=true
+core.precomposeunicode=true
+remote.origin.url=git@github.com:**/repo.git
+remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*
+branch.main.remote=origin
+branch.main.merge=refs/heads/main
+```
+git 로그인및 저장소연동확인
+
+```
+git remote -v
+```
+
+```
+git remote -v
+```
+
+```
+origin	git@github.com:bs7703/repo.git (fetch)
+origin	git@github.com:bs7703/repo.git (push)
+```
+독스에 웹사이트 스크린샷 참조
+
+6. 트러블슈팅과 문제해결
 
 apt-get install을 배시에서실행시 해당오류가 떳는데,
 
