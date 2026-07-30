@@ -1,0 +1,32 @@
+FROM		ubuntu:22.04
+
+LABEL		maintainer="skim"
+
+ENV		APP_HOME=/app\
+		APP_ENV=production\
+		TZ=Asia/Seoul
+
+RUN		apt-get update && \
+		apt-get install -y --no-install-recommends \
+		curl \
+		vim \
+		python3 && \
+		rm -rf /var/lib/apt/lists/*
+
+RUN		groupadd -r appgroup && \
+		useradd -r -g appgroup appuser && \
+		mkdir -p $APP_HOME && \
+		chown -R appuser:appgroup $APP_HOME
+
+WORKDIR		$APP_HOME
+
+COPY		--chown=appuser:appgroup . .
+
+USER		appuser
+
+EXPOSE		8080
+
+HEALTHCHECK	--interval=30s --timeout=3s --start-period=5s --retries=3 \
+		CMD curl -f http://localhost:8080/ || exit 1
+
+CMD		["python3", "-m", "http.server", "8080]
