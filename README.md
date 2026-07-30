@@ -692,7 +692,24 @@ git remote -v
 origin	git@github.com:bs7703/repo.git (fetch)
 origin	git@github.com:bs7703/repo.git (push)
 ```
-독스에 웹사이트 스크린샷 참조
+
+```
+git push            
+```
+
+```
+오브젝트 나열하는 중: 5, 완료.
+오브젝트 개수 세는 중: 100% (5/5), 완료.
+Delta compression using up to 6 threads
+오브젝트 압축하는 중: 100% (3/3), 완료.
+오브젝트 쓰는 중: 100% (3/3), 803 bytes | 803.00 KiB/s, 완료.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:bs7703/repo.git
+   6b7b86d..9e6c437  main -> main
+```
+
+docs에 웹사이트 스크린샷 참조
 
 6. 트러블슈팅과 문제해결
 
